@@ -5,6 +5,7 @@ require('colors');
 
 const schema = require('./schema/schema');
 
+// Import important ENV Variables
 const { PORT, NODE_ENV } = process.env;
 const Port = PORT || 5000;
 
