@@ -4,6 +4,7 @@ require('dotenv').config();
 require('colors');
 
 const schema = require('./schema/schema');
+const connectDB = require('./config/db');
 
 // Import important ENV Variables
 const { PORT, NODE_ENV } = process.env;
@@ -12,6 +13,9 @@ const Port = PORT || 5000;
 // Initialise Express App
 const app = express();
 
+// Connect Database
+connectDB();
+
 // GrapQL endpoint
 app.use('/graphql', graphqlHTTP({
   schema,
@@ -19,4 +23,4 @@ app.use('/graphql', graphqlHTTP({
 }));
 
 // Listen
-app.listen(Port, console.log(`Serving running on port ${Port}`.cyan));
+app.listen(Port, console.log(`Serving running on port ${Port}`.cyan.underline.bold));
