@@ -51,10 +51,7 @@ const clients = [
     phone: '343-567-4333',
   },
   {
-    id: '2',
-    name: 'Natasha Romanov',
-    email: 'blackwidow@gmail.com',
-    phone: '223-567-3322',
+    id: '2', name: 'Natasha Romanov', email: 'blackwidow@gmail.com', phone: '223-567-3322',
   },
   {
     id: '3',
