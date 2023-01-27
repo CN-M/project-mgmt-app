@@ -6,6 +6,7 @@ import { GET_CLIENTS } from '../queries/clientQueries'
 
 const ClientRow = ({ client }) => {
     const { name, email, phone, id } = client
+    
     const [deleteClient] = useMutation(DELETE_CLIENT, {
         variables: { id },
         update(cache, { data: { deleteClient } }) {

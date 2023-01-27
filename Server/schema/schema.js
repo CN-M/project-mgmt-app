@@ -97,7 +97,7 @@ const mutation = new GraphQLObjectType({
       },
     },
 
-    // Remove a Client
+    // Remove a Client & All Their Projects
     deleteClient: {
       type: ClientType,
       args: {
@@ -168,10 +168,11 @@ const mutation = new GraphQLObjectType({
             },
           }),
         },
+        clientId: { type: GraphQLID },
       },
       resolve(parent, args) {
         const {
-          id, name, description, status,
+          id, name, description, status, clientId,
         } = args;
         return Project.findByIdAndUpdate(
           id,
@@ -180,6 +181,7 @@ const mutation = new GraphQLObjectType({
               name,
               description,
               status,
+              clientId,
             },
           },
           { new: true },
