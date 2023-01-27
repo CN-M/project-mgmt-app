@@ -14,7 +14,7 @@
         "no-unused-vars":"off",
         "quotes": [
             "error",
-            "double"
+            "single"
         ],
         "no-console":"off",
         "no-underscore-dangle": "off",

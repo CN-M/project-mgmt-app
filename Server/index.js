@@ -3,6 +3,7 @@ const { graphqlHTTP } = require('express-graphql');
 require('dotenv').config();
 require('colors');
 
+// Import Schema and DB
 const schema = require('./schema/schema');
 const connectDB = require('./config/db');
 
@@ -23,4 +24,4 @@ app.use('/graphql', graphqlHTTP({
 }));
 
 // Listen
-app.listen(Port, console.log(`Serving running on port ${Port}`.cyan.underline.bold));
+app.listen(Port, console.log(`Serving running on http://localhost:${Port}/graphql`.cyan.underline.bold));
